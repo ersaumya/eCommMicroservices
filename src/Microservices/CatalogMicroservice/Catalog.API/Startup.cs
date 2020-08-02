@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Catalog.API.Core.Implementation;
+using Catalog.API.Core.Interfaces;
 using Catalog.API.Settings;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,8 @@ namespace Catalog.API
 
             services.AddSingleton<ICatalogDatabaseSettings>(sp =>
             sp.GetRequiredService<IOptions<CatalogDatabaseSettings>>().Value);
+
+            services.AddTransient<ICatalogContext, CatalogContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
