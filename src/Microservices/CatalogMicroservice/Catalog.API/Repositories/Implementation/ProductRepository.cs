@@ -36,7 +36,7 @@ namespace Catalog.API.Repositories.Implementation
 
         public async Task<IEnumerable<Product>> GetProductByCategory(string categoryName)
         {
-            FilterDefinition<Product> filterCategory = Builders<Product>.Filter.ElemMatch(p => p.Category, categoryName);
+            FilterDefinition<Product> filterCategory = Builders<Product>.Filter.Eq(p => p.Category, categoryName);
             return await _context.Products.Find(filterCategory).ToListAsync();
         }
 
