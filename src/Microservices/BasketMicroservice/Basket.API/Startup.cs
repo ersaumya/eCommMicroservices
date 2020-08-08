@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using Basket.API.Core;
 using Basket.API.Repositories.Abstraction;
 using Basket.API.Repositories.Implementation;
@@ -40,6 +41,7 @@ namespace Basket.API
             });
             services.AddTransient<IBasketContext, BasketContext>();
             services.AddTransient<IBasketRepository, BasketRepository>();
+            services.AddAutoMapper(typeof(Startup));
             //swagger setup
             services.AddSwaggerGen(c =>
             {
