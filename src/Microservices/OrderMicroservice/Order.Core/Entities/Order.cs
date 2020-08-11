@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Order.Core.Entities
 {
-    public class Order:Entity
+    public class Order: Entity
     {
         public string UserName { get; set; }
         public decimal TotalPrice { get; set; }
