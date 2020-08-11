@@ -25,11 +25,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OrderMicroservice", "OrderM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.API", "src\Microservices\OrderMicroservice\Order.API\Order.API.csproj", "{0216FA8D-D550-4405-8B34-96C7B0BE9822}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Core", "src\Microservices\OrderMicroservice\Order.Core\Order.Core.csproj", "{EB2C6588-82B3-4F26-99DB-728E0930BF48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Core", "src\Microservices\OrderMicroservice\Order.Core\Order.Core.csproj", "{EB2C6588-82B3-4F26-99DB-728E0930BF48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Infrastructure", "src\Microservices\OrderMicroservice\Order.Infrastructure\Order.Infrastructure.csproj", "{18780E7A-7FF3-438A-B9C2-C79D7F3B24A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Infrastructure", "src\Microservices\OrderMicroservice\Order.Infrastructure\Order.Infrastructure.csproj", "{18780E7A-7FF3-438A-B9C2-C79D7F3B24A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.Application", "src\Microservices\OrderMicroservice\Order.Application\Order.Application.csproj", "{33844A56-1118-479B-AB1C-61A5404386C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.Application", "src\Microservices\OrderMicroservice\Order.Application\Order.Application.csproj", "{33844A56-1118-479B-AB1C-61A5404386C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,9 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Order.Core.Entities;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Order.Core.Entities
+namespace Order.Infrastructure.Data
 {
     public class OrderContext:DbContext
     {
@@ -11,6 +12,6 @@ namespace Order.Core.Entities
         {
 
         }
-        public DbSet<Order> Orders { get; set; }
+        public DbSet<Core.Entities.Order> Orders { get; set; }
     }
 }
