@@ -339,3 +339,4 @@ ASALocalRun/
 # BeatPulse healthcheck temp database
 healthchecksdb
 /src/Microservices/CatalogMicroservice/Catalog.API/Repositories
+/src/Microservices/OrderMicroservice/Order.Application/Mapper
