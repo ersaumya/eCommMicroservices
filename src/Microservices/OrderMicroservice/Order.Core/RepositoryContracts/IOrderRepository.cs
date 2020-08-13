@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using Order.Core.Entities;
-using Order.Core.Repositories.Base;
+using Order.Core.RepositoryContracts.Base;
 
-namespace Order.Core.Repositories
+namespace Order.Core.RepositoryContracts
 {
     public interface IOrderRepository : IRepository<Entities.Order>
     {
