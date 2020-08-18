@@ -5,7 +5,6 @@ using System.Reflection;
 using System.Threading.Tasks;
 using AutoMapper;
 using EventBusRabbitMQ;
-using EventBusRabbitMQ.Producer;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -16,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Order.API.RabbitMq;
 using Order.Application.Handlers;
 using Order.Core.RepositoryContracts;
 using Order.Core.RepositoryContracts.Base;
@@ -70,7 +70,7 @@ namespace Order.API
                 }
                 return new RabbitMQConnection(factory);
             });
-            services.AddSingleton<EventBusProducer>();
+            services.AddSingleton<EventBusConsumer>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
