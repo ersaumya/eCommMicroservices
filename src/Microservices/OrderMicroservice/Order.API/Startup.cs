@@ -15,6 +15,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Order.API.Extensions;
 using Order.API.RabbitMq;
 using Order.Application.Handlers;
 using Order.Core.RepositoryContracts;
@@ -89,6 +90,10 @@ namespace Order.API
             {
                 endpoints.MapControllers();
             });
+
+            //Initilize Rabbit Listener in ApplicationBuilderExtentions
+            app.UseRabbitMqListener();
+
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
