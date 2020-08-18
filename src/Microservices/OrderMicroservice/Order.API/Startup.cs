@@ -44,16 +44,24 @@ namespace Order.API
             services.AddDbContext<OrderContext>(c =>
                 c.UseSqlServer(Configuration.GetConnectionString("OrderConnection")), ServiceLifetime.Singleton);
 
-            services.AddAutoMapper(typeof(Startup));
-            services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
+            #region Di order should be implemented as follows
+
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped(typeof(IOrderRepository), typeof(OrderRepository));
             services.AddTransient<IOrderRepository, OrderRepository>();
-            services.AddScoped(typeof(IRepository<>),typeof(Repository<>));
-            services.AddScoped(typeof(IOrderRepository),typeof(OrderRepository));
+
+            services.AddAutoMapper(typeof(Startup));
+
+            services.AddMediatR(typeof(CheckoutOrderHandler).GetTypeInfo().Assembly);
+
+            #endregion
+
             //swagger setup
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Order API", Version = "v1" });
             });
+
             //RabbitMQ connection setting
             services.AddSingleton<IRabbitMQConnection>(sp =>
             {
