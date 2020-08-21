@@ -73,9 +73,22 @@
       ],
       "UpstreamPathTemplate": "/Basket/Checkout",
       "UpstreamHttpMethod": [ "POST" ]
+    },
+    //Order Api
+    {
+      "DownstreamPathTemplate": "/api/v1/Order",
+      "DownsteamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "orderapi",
+          "Port": "80"
+        }
+      ],
+      "UpstreamPathTemplate": "/Order",
+      "UpstreamHttpMethod": [ "GET" ]
     }
-    
-    
+
+
   ]
 
 }
