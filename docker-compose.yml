@@ -30,3 +30,10 @@ services:
         build:
             context: .
             dockerfile: src/Microservices/OrderMicroservice/Order.API/Dockerfile
+
+    ocelotapigateway:
+        image: ${DOCKER_REGISTRY-}ocelotapigateway
+        build:
+            context: .
+            dockerfile: src/ApiGateways/OcelotApiGateway/Dockerfile
+
