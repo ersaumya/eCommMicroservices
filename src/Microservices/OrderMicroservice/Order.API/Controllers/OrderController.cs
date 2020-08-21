@@ -12,7 +12,7 @@ using Order.Application.Responses;
 
 namespace Order.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class OrderController : ControllerBase
     {
