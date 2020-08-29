@@ -8,6 +8,10 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
+using MVCApp.Services.Abstraction;
+using MVCApp.Services.Implementation;
+using MVCApp.Settings;
 
 namespace MVCApp
 {
@@ -23,6 +27,25 @@ namespace MVCApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region Configuration Dependencies
+
+            services.Configure<ApiSettings>(Configuration.GetSection(nameof(ApiSettings)));
+
+            services.AddSingleton<IApiSettings>(sp => sp.GetRequiredService<IOptions<ApiSettings>>().Value);
+
+            #endregion
+
+            #region Project Dependencies
+
+            // add for httpClient factory
+            services.AddHttpClient();
+
+            // add api dependecy
+            services.AddTransient<ICatalogService, CatalogService>();
+            services.AddTransient<IBasketService, BasketService>();
+            services.AddTransient<IOrderService, OrderService>();
+
+            #endregion
             services.AddControllersWithViews();
         }
 
